@@ -1,33 +1,73 @@
 .favorites {
-    box-sizing: border-box;
-    border: 1px solid rgba(0, 8, 7);
-    padding: 30px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 8, 7);
+  padding: 30px 20px;
+  position: fixed;
+  max-width: 400px;
+  width: 30%;
+  min-width: 300px;
 }
 
 .favorites__name {
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 16px;
-    padding: 5px 10px;
-    border: 1px solid rgba(0, 8, 7, .5);
-    margin-bottom: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 8, 7, 0.5);
+  margin-bottom: 24px;
 }
 
 .favorites__list {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .favorites__save {
-    border: none;
-    background-color: #496DDB;
-    padding: 10px 15px;
-    color: #FFEEDB;
-    font-size: 14px;
-    transition: all 0.2s linear;
+  border: none;
+  background-color: #496ddb;
+  padding: 10px 15px;
+  color: #ffeedb;
+  font-size: 14px;
+  transition: all 0.2s linear;
 }
 
+.favorites__save:hover:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.favorites__save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .favorites__save:hover {
-    cursor: pointer;
-    opacity: 0.9;
-    transition: all 0.2s linear;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.btn-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: solid rgb(204, 202, 202) 1px;
+}
+
+.btn-delete:disabled:hover {
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+}
+
+.btn-delete:hover {
+  background-color: rgb(253, 0, 0);
+  color: cornsilk;
+}
+
+.point-favorites {
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
 }

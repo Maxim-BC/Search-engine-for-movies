@@ -1,0 +1,93 @@
+.show {
+  width: 33px;
+  opacity: 0.8;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: solid 1px rgb(41, 105, 207);
+  color: rgb(41, 105, 207);
+  right: 10px;
+  top: 150px;
+  position: fixed;
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.mobile_favorites {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 8, 7);
+  padding: 15px 7px;
+  position: fixed;
+  max-width: 500px;
+  background-color: aliceblue;
+  top:150px;
+  width: 80vw;
+  left: 40px;
+  min-width: 80px;
+  max-width: 550px;
+}
+
+.mobile_favorites__name {
+  box-sizing: border-box;
+  width: 90%;
+  font-size: 16px;
+  padding: 3px 8px;
+  border: 1px solid rgba(0, 8, 7, 0.5);
+  margin-bottom: 20px;
+}
+
+.mobile_favorites__list {
+  margin-bottom: 20px;
+}
+
+.mobile_favorites__save {
+  border: none;
+  background-color: #496ddb;
+  padding: 10px 15px;
+  color: #ffeedb;
+  font-size: 14px;
+  transition: all 0.2s linear;
+}
+
+.mobile_favorites__save:hover:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.mobile_favorites__save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.mobile_favorites__save:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.mobile_favorites_btn_delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: solid rgb(204, 202, 202) 1px;
+}
+
+.mobile_favorites_btn_delete:disabled:hover {
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+}
+
+.mobile_favorites_btn_delete:hover {
+  background-color: rgb(253, 0, 0);
+  color: cornsilk;
+}
+
+.point_mobile_favorites {
+  margin-bottom: 7px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}

@@ -1,37 +1,34 @@
-import React, { Component } from 'react';
-import MovieItem from '../MovieItem/MovieItem';
-import './Movies.css';
+import React, { useState, useEffect } from "react";
+import MovieItem from "../MovieItem/MovieItem";
+import "./Movies.css";
 
-class Movies extends Component {
-    state = { 
-        movies: [
-            {
-                imdbID: 'tt3896198',
-                title: "Guardians of the Galaxy Vol. 2",
-                year: 2017,
-                poster: "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-
-            },
-            {
-                imdbID: 'tt0068646',
-                title: "The Godfather",
-                year: 1972,
-                poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
-
-            }
-        ]
+export default function Movies({ searchLine, addItem }) {
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    if (searchLine !== "" && searchLine.Error !== "Movie not found!") {
+      setMovies(searchLine.Search);
+      setError(null);
     }
-    render() { 
-        return ( 
-            <ul className="movies">
-                {this.state.movies.map((movie) => (
-                    <li className="movies__item" key={movie.imdbID}>
-                        <MovieItem {...movie} />
-                    </li>
-                ))}
-            </ul>
-        );
+
+    if (searchLine.Error === "Movie not found!") {
+      setError("Movie not found!");
     }
+    if (searchLine.Error === "Too many results.") {
+      setError("Too many results.");
+    }
+  }, [searchLine]);
+  const result =
+    error === null ? (
+      <ul className="movies">
+        {movies.map((movie) => (
+          <li className="movies__item" key={movie.imdbID}>
+            <MovieItem {...movie} addItem={addItem} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <h1>{error}</h1>
+    );
+  return <>{result}</>;
 }
- 
-export default Movies;

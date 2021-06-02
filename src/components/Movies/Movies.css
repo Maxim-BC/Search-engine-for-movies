@@ -1,3 +1,16 @@
 .movies__item {
-    margin-bottom: 21px;
+  margin-bottom: 21px;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .movies__item {
+    margin-bottom: 10px;
+    min-width: 250px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .movies{
+      min-width: 240px;
+      width: 100%;
+      max-width: 600px;
+  }
 }

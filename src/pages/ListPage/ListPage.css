@@ -1,12 +1,41 @@
 .list-page {
-    padding: 42px calc(50% - 300px);
+  padding: 42px calc(50% - 300px);
 }
 
 .list-page__title {
-    font-size: 34px;
-    margin-bottom: 26px;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 26px;
 }
 
 .list-page ul li {
-    font-size: 18px;
+  font-size: 18px;
 }
+.point-list {
+  border: 1px solid grey;
+  padding: 10px;
+  background-color: blanchedalmond;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.img-list-movies {
+  margin-right: 10px;
+  height: 100px;
+  width: 75px;
+}
+
+.not-poster-list-movies {
+  height: 100px;
+  width: 80px;
+  background-color: white;
+  font-size: 12px;
+
+  margin-right: 10px;
+  border: 1px solid;
+  text-align: center;
+  padding: 2px;
+  align-items: center;
+  display: flex;
+}
+
