@@ -16,6 +16,7 @@ class MainPage extends Component {
     arrayFavorites: [],
     searchLine: "",
     curVersion: "",
+    quantityItemFavorites: 0,
   };
 
   componentDidMount() {
@@ -33,20 +34,20 @@ class MainPage extends Component {
     const array = this.state.arrayFavorites;
     const filterArr = array.filter((arr) => arr.imdbID !== item.imdbID);
     const newArray = [...filterArr, item];
-    this.getNewArray(newArray);
+    this.setState({
+      arrayFavorites: newArray,
+      quantityItemFavorites: this.state.quantityItemFavorites + 1,
+    });
   };
   deleteItem = (index) => {
     const array = this.state.arrayFavorites;
     array.splice(index, 1);
     this.setState({
       arrayFavorites: array,
+      quantityItemFavorites: this.state.quantityItemFavorites - 1,
     });
   };
-  getNewArray(newArray) {
-    this.setState({
-      arrayFavorites: newArray,
-    });
-  }
+
   render() {
     return (
       <div className="main-page">
@@ -58,6 +59,7 @@ class MainPage extends Component {
             </div>
             <div className="main-page__movies">
               <Movies
+                arrayFavorites={this.state.arrayFavorites}
                 searchLine={this.state.searchLine}
                 addItem={this.addItem}
               />
@@ -72,6 +74,7 @@ class MainPage extends Component {
             )}
             {this.state.curVersion === "mobile" && (
               <MobileFavorites
+                quantityItemFavorites={this.state.quantityItemFavorites}
                 deleteItem={this.deleteItem}
                 arrayFavorites={this.state.arrayFavorites}
               />

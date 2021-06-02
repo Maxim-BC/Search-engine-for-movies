@@ -41,8 +41,8 @@
   .main-page__content {
     max-width: 600px;
     width: 100%;
+    margin: 0 auto;
     min-width: 220px;
-    padding: 22px calc(50% - 250px);
     display: flex;
     justify-content: space-between;
   }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieItem from "../MovieItem/MovieItem";
 import "./Movies.css";
 
-export default function Movies({ searchLine, addItem }) {
+export default function Movies({ searchLine, addItem, arrayFavorites }) {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -23,7 +23,11 @@ export default function Movies({ searchLine, addItem }) {
       <ul className="movies">
         {movies.map((movie) => (
           <li className="movies__item" key={movie.imdbID}>
-            <MovieItem {...movie} addItem={addItem} />
+            <MovieItem
+              {...movie}
+              addItem={addItem}
+              arrayFavorites={arrayFavorites}
+            />
           </li>
         ))}
       </ul>

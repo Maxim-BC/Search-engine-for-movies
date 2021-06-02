@@ -80,7 +80,8 @@ export default class MbileFavorites extends Component {
           onClick={this.openMenuSaveList}
           className={this.state.btnOpenSaveList}
         >
-          &#9776;
+          <p>&#9776;</p>
+          {this.props.quantityItemFavorites}
         </button>
         <div className={this.state.showSaveList}>
           <label>

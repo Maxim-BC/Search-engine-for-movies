@@ -1,12 +1,13 @@
 .show {
-  width: 33px;
+  width: 10%;
+  height: 5%;
   opacity: 0.8;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   border: solid 1px rgb(41, 105, 207);
   color: rgb(41, 105, 207);
   right: 10px;
-  top: 150px;
+  top: 170px;
   position: fixed;
   display: block;
 }
@@ -18,10 +19,11 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 8, 7);
   padding: 15px 7px;
+
   position: fixed;
   max-width: 500px;
   background-color: aliceblue;
-  top:150px;
+  top: 150px;
   width: 80vw;
   left: 40px;
   min-width: 80px;

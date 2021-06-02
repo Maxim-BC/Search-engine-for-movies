@@ -3,7 +3,8 @@ import "./MovieItem.css";
 
 class MovieItem extends Component {
   render() {
-    const { Title, Year, Poster, imdbID } = this.props;
+    const { Title, Year, Poster, imdbID, arrayFavorites } = this.props;
+
     const imgPoster =
       Poster === "N/A" ? (
         <div className="not-poster">
@@ -12,6 +13,12 @@ class MovieItem extends Component {
       ) : (
         <img className="movie-item__poster" src={Poster} alt={Title} />
       );
+
+    const resultFind = arrayFavorites.find((item) => item.imdbID === imdbID);
+
+    const resultStateBtnAdd =
+      resultFind === undefined ? "Добавить в список" : "Добавлено";
+
     return (
       <article className="movie-item">
         {imgPoster}
@@ -21,10 +28,11 @@ class MovieItem extends Component {
           </h3>
           <button
             type="button"
+            disabled={resultStateBtnAdd === "Добавлено"}
             onClick={() => this.props.addItem({ Title, Year, Poster, imdbID })}
             className="movie-item__add-button"
           >
-            Добавить в список
+            {resultStateBtnAdd}
           </button>
         </div>
       </article>

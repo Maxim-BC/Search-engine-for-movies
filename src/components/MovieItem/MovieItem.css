@@ -43,7 +43,12 @@
   align-items: center;
   display: flex;
 }
-
+.movie-item__add-button:disabled {
+  opacity: 0.8;
+  background-color: rgb(58, 194, 46);
+  color: black;
+  cursor: not-allowed;
+}
 @media (min-width: 320px) and (max-width: 768px) {
   .movie-item {
     padding: 5px;
