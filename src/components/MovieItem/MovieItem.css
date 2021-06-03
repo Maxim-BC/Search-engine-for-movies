@@ -23,13 +23,13 @@
   padding: 8px 12px;
   color: #ffeedb;
   font-size: 12px;
-  transition: all 0.2s linear;
+  transition: all 1s;
 }
 
 .movie-item__add-button:hover {
   cursor: pointer;
   opacity: 0.9;
-  transition: all 0.2s linear;
+  transition: all 1s linear;
 }
 
 .not-poster {
@@ -44,13 +44,17 @@
   display: flex;
 }
 .movie-item__add-button:disabled {
-  opacity: 0.8;
-  background-color: rgb(58, 194, 46);
-  color: black;
+  background-color: rgb(48, 163, 37);
+  color: rgb(255, 255, 255);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 5px;
   cursor: not-allowed;
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .movie-item {
+    margin-right: 10px;
     padding: 5px;
     background-color: #ffeedb;
     display: flex;
@@ -70,7 +74,7 @@
     margin-right: 11px;
   }
   .movie-item__title {
-    min-width: 150px;
+    min-width: 140px;
     width: 100%;
     max-width: 300px;
     font-weight: 400;
@@ -79,7 +83,7 @@
   }
   .movie-item__info {
     width: 100%;
-    min-width: 160px;
+    min-width: 140px;
     max-width: 500px;
   }
 }

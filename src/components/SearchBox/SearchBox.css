@@ -41,7 +41,6 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-
   .search-box__form-label {
     display: inline-block;
     font-size: 12px;
@@ -54,7 +53,7 @@
   .search-box__form {
     flex-wrap: wrap;
     display: flex;
-    width:100%;
+    width: 100%;
     min-width: 200px;
     max-width: 400px;
   }

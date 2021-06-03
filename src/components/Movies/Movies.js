@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import MovieItem from "../MovieItem/MovieItem";
 import "./Movies.css";
 
-export default function Movies({ searchLine, addItem, arrayFavorites }) {
+export default function Movies({
+  searchLine,
+  addItem,
+  arrayFavorites,
+  isListCreated,
+}) {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -27,6 +32,7 @@ export default function Movies({ searchLine, addItem, arrayFavorites }) {
               {...movie}
               addItem={addItem}
               arrayFavorites={arrayFavorites}
+              isListCreated={isListCreated}
             />
           </li>
         ))}

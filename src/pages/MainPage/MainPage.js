@@ -17,6 +17,7 @@ class MainPage extends Component {
     searchLine: "",
     curVersion: "",
     quantityItemFavorites: 0,
+    isListCreated: false,
   };
 
   componentDidMount() {
@@ -47,7 +48,11 @@ class MainPage extends Component {
       quantityItemFavorites: this.state.quantityItemFavorites - 1,
     });
   };
-
+  isListCreated = () => {
+    this.setState({
+      isListCreated: true,
+    });
+  };
   render() {
     return (
       <div className="main-page">
@@ -59,6 +64,7 @@ class MainPage extends Component {
             </div>
             <div className="main-page__movies">
               <Movies
+                isListCreated={this.state.isListCreated}
                 arrayFavorites={this.state.arrayFavorites}
                 searchLine={this.state.searchLine}
                 addItem={this.addItem}
@@ -68,12 +74,14 @@ class MainPage extends Component {
           <aside className="main-page__favorites">
             {this.state.curVersion === "desktop" && (
               <Favorites
+                isListCreated={this.isListCreated}
                 deleteItem={this.deleteItem}
                 arrayFavorites={this.state.arrayFavorites}
               />
             )}
             {this.state.curVersion === "mobile" && (
               <MobileFavorites
+                isListCreated={this.isListCreated}
                 quantityItemFavorites={this.state.quantityItemFavorites}
                 deleteItem={this.deleteItem}
                 arrayFavorites={this.state.arrayFavorites}

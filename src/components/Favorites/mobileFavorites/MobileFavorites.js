@@ -15,7 +15,10 @@ export default class MbileFavorites extends Component {
     let result = this.props.arrayFavorites.map((item) => item.imdbID);
     const { tittle } = this.state;
     registerList(tittle, result)
-      .then((resBody) => this.setState({ idList: resBody.id }))
+      .then(
+        (resBody) => this.setState({ idList: resBody.id }),
+        this.props.isListCreated()
+      )
       .catch((err) => console.log(`Ошибка: ${err}`));
   };
   changeNameList = (evt) => {
@@ -27,10 +30,12 @@ export default class MbileFavorites extends Component {
       showSaveList: "mobile_favorites",
     });
   };
-  cancel=()=>{this.setState({
-    btnOpenSaveList: "show",
-    showSaveList: "hide",
-  });}
+  cancel = () => {
+    this.setState({
+      btnOpenSaveList: "show",
+      showSaveList: "hide",
+    });
+  };
   render() {
     const { arrayFavorites } = this.props;
     const resultList =
