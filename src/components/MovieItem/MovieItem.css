@@ -46,10 +46,7 @@
 .movie-item__add-button:disabled {
   background-color: rgb(48, 163, 37);
   color: rgb(255, 255, 255);
-  border-bottom-right-radius: 30px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 5px;
+  border-radius: 10px;
   cursor: not-allowed;
 }
 @media (min-width: 320px) and (max-width: 768px) {

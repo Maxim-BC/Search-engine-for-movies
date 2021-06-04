@@ -68,13 +68,13 @@
 }
 
 .mobile_favorites_btn_delete {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
+  display: block;
+  min-width: 22px;
+  width: 22px;
+  min-height: 22px;
   height: 22px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 30px;
   border: solid rgb(204, 202, 202) 1px;
 }
 
