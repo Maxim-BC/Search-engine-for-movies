@@ -7,6 +7,7 @@ export default function Movies({
   addItem,
   arrayFavorites,
   isListCreated,
+  deleteItem,
 }) {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -33,6 +34,7 @@ export default function Movies({
               addItem={addItem}
               arrayFavorites={arrayFavorites}
               isListCreated={isListCreated}
+              deleteItem={deleteItem}
             />
           </li>
         ))}

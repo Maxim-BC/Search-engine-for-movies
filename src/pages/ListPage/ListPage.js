@@ -25,9 +25,7 @@ class ListPage extends Component {
     });
     return (
       <div className="list-page">
-        <h1 className="list-page__title">
-          Мой список: "{this.state.tittleList}"
-        </h1>
+        <h1 className="list-page__title">{this.state.tittleList}</h1>
         <ul>{listMovies}</ul>
       </div>
     );

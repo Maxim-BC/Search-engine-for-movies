@@ -18,14 +18,15 @@
 }
 
 .movie-item__add-button {
+  line-height: 1;
+  width: 140px;
+  height: 30px;
   border: none;
   background-color: #496ddb;
-  padding: 8px 12px;
+  padding: 3px 12px;
   color: #ffeedb;
   font-size: 12px;
-  transition: all 1s;
 }
-
 .movie-item__add-button:hover {
   cursor: pointer;
   opacity: 0.9;
@@ -43,13 +44,35 @@
   align-items: center;
   display: flex;
 }
+
 .movie-item__add-button:disabled {
   background-color: rgb(48, 163, 37);
   color: rgb(255, 255, 255);
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: not-allowed;
+  width: 100px;
+  height: 30px;
 }
+.movie-item__btn-delete {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(243, 67, 35);
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  font-size: 12px;
+  height: 30px;
+  width: 130px;
+}
+.box-btn-add-delete {
+  flex-direction: column;
+  display: flex;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
+  .movie-item__add-button {
+    padding: 0;
+  }
   .movie-item {
     margin-right: 10px;
     padding: 5px;

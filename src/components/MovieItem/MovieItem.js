@@ -3,8 +3,15 @@ import "./MovieItem.css";
 
 class MovieItem extends Component {
   render() {
-    const { Title, Year, Poster, imdbID, arrayFavorites, isListCreated } =
-      this.props;
+    const {
+      Title,
+      Year,
+      Poster,
+      imdbID,
+      arrayFavorites,
+      isListCreated,
+      deleteItem,
+    } = this.props;
 
     const imgPoster =
       Poster === "N/A" ? (
@@ -27,16 +34,26 @@ class MovieItem extends Component {
             {Title}&nbsp;({Year})
           </h3>
           {!isListCreated && (
-            <button
-              type="button"
-              disabled={resultStateBtnAdd === "Добавлено"}
-              onClick={() =>
-                this.props.addItem({ Title, Year, Poster, imdbID })
-              }
-              className="movie-item__add-button"
-            >
-              {resultStateBtnAdd}
-            </button>
+            <div className="box-btn-add-delete">
+              <button
+                type="button"
+                disabled={resultStateBtnAdd === "Добавлено"}
+                onClick={() =>
+                  this.props.addItem({ Title, Year, Poster, imdbID })
+                }
+                className="movie-item__add-button"
+              >
+                {resultStateBtnAdd}
+              </button>
+              {resultStateBtnAdd === "Добавлено" && (
+                <button
+                  onClick={() => deleteItem(imdbID)}
+                  className="movie-item__btn-delete"
+                >
+                  Удалить из списка
+                </button>
+              )}
+            </div>
           )}
         </div>
       </article>

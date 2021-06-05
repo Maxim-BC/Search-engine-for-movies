@@ -69,7 +69,6 @@ export default class Favorites extends Component {
             className="favorites__name"
           />
         </label>
-
         <ul className="favorites__list">{resultList}</ul>
         {linkAndBtnSaveList}
       </div>

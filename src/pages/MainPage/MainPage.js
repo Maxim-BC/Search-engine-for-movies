@@ -48,6 +48,15 @@ class MainPage extends Component {
       quantityItemFavorites: this.state.quantityItemFavorites - 1,
     });
   };
+  deleteItemFromList = (idItem) => {
+    const array = this.state.arrayFavorites;
+    const filterArr = array.filter((arr) => arr.imdbID !== idItem);
+    const newArray = [...filterArr];
+    this.setState({
+      arrayFavorites: newArray,
+      quantityItemFavorites: this.state.quantityItemFavorites - 1,
+    });
+  };
   isListCreated = () => {
     this.setState({
       isListCreated: true,
@@ -68,6 +77,7 @@ class MainPage extends Component {
                 arrayFavorites={this.state.arrayFavorites}
                 searchLine={this.state.searchLine}
                 addItem={this.addItem}
+                deleteItem={this.deleteItemFromList}
               />
             </div>
           </section>
