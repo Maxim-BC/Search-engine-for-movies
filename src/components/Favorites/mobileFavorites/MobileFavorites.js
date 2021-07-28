@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./MobileFavorites.css";
 import { registerList } from "../../../api";
 import { Link } from "react-router-dom";
-export default class MbileFavorites extends Component {
+export default class MobileFavorites extends Component {
   state = {
     tittle: "",
     idList: "",
